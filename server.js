@@ -4,11 +4,8 @@ const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3000;
 
-// app/json parser
-const jsonParser = bodyParser.json();
-
 //urlencoded parser
-const urlencodedParser = bodyParser.urlencoded({ extended: false});
+app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(bodyParser.json({ type: "application/++json" }));
 app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
@@ -23,6 +20,5 @@ app.listen(PORT, function() {
 });
 
 
-//will need to install these, working on no internet currently
-//WILL NEED TO DO NPM INIT FOR PACKAGE.JSON!
+
 
